@@ -1,18 +1,292 @@
 <!DOCTYPE html>
-echo "# nebulosa" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/nivaruru/nebulosa.git
-git push -u origin main
-<html lang="en"> 
+<html lang="en">
 <head>
-    <title>nebulosa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Nebulosa</title>
+
+    <!-- 1. Los enlaces de Google Fonts van aquí arriba -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- 2. Los estilos CSS van aparte en su propia etiqueta <style> -->
+    <style>
+        body {
+            background-color: #b3f7f3;
+            font-family: "Space Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+        header h1, header p{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e3aafd;
+            -webkit-text-stroke: 1px #000000;
+            font-style: italic;
+            font-size: 64px; 
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav ul li a{
+            background-color: #f0e2f3;
+            text-decoration: none;
+            color: #000000;
+            display: block;
+            margin: 4px;
+            padding: 2px;
+            border: 2px solid #000000;
+            border-radius: 2px;
+            box-shadow: 2px 2px rgb(116, 23, 238);
+            transition: transform 0.2s, box-shadow
+            0.2s; 
+        }
+        nav ul li a:hover {
+            transform: translateY(3px, 3px);
+            box-shadow: 0px 0px #000000;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .card{
+            width: 260px;
+            min-height: 420px;
+            background-color: white;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            box-shadow: -5px 5px #FF00FF;
+        }
+        .card-imagen{
+            margin: 16px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-imagen img{
+            width: 90%;
+            padding: 8px;
+        }
+        .card-contenido{
+            margin: 16px;
+        }
+        .etiqueta{
+            display: inline-block;
+            color: #000000;
+            border: 2px solid #000000;
+            border-radius: 4px;
+            padding: 2px;
+            font-size: 14px;
+        }
+        .card-contenido .título{
+            font-size: 16px;
+            font-weight: bold;
+            margin: 8px 0;
+            text-align: left;
+            line-height: 0.9;
+        }
+        .card-contenido .descripción{
+            font-size: 14px;
+            margin: 8px 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .card-accion{
+            margin: 16px;
+            text-align: right;
+        }
+        .card-accion a{
+            color: #000000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .card-accion a:hover{
+            color: #00c3ff;
+        }
+        .bg-amarillo{
+            background-color: #e5ff00;
+        }
+        .bg-lila{
+            background-color: #ae58d6;
+        }
+        .bg-rosa{
+            background-color: #eaabf7;
+        }
+        .bg-cian{
+            background-color: #00c3ff;
+        }
+        .bg-header-azul{
+            background-color: #00c3ff9d;
+        }
+        .bg-header-verde{
+            background-color: #00ff73;
+        }
+        .bg-header-rosa{
+            background-color: #eaabf7;
+        }
+        .bg-header-amarillo{
+            background-color: #e5ff00;
+        }
+        footer{
+            text-align: center;
+            margin-top: 20px;
+            padding: 16px;
+            background-color: #f0e2f3;
+            border-top: 2px solid #000000;
+        }
+        .contenedor-tarjetas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contenido-completo img{
+            width: 100%;
+            max width: 100px;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+        .contenido-completo p{
+            font-size: small;
+            line-height: 1;
+        }
+    </style>
 </head>
 <body>
-    contenido de la web
-    <h1>Bienvenido a Nebulosa</h1>
-    <p>Este es un simple blog sobre astronomía.</p>
+
+    <header>
+        <h1>Blog Nebulosa</h1>
+        <p>Repositorio de Periodismo Electrónico 2026-2</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">[Inicio]</a></li>
+            <li><a href="articulos.html">[Artículos]</a></li>
+            <li><a href="contacto.html">[Contacto]</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="contenedor-tarjetas"> 
+
+        <!-- TARJETA 1  --> 
+        <div class="card">
+            <div class="card-imagen bg-header-azul">
+                <img src="yasss.jpg">
+            </div> 
+            <div class="card-contenido">
+                <span class="etiqueta bg-rosa">[Entrega I ✧ 4 sep]</span>
+                <p class="título">Periodismo electrónico, ciberperiodismo y periodismo digital</p>
+                <p class="descripción">¿Cuál es la diferencia?</p>
+                <details class="contenido-completo">
+                    <summary>Ver infografía</summary>
+                    <img src="infografia 1.jpeg">
+                </details>
+            </div>
+        </div>
+        </div>
+    
+        <!-- TARJETA 2  -->
+         <div class="card">
+            <div class="card-imagen bg-header-amarillo">
+                <img src="aja.jpg">
+            </div> 
+            <div class="card-contenido">
+                <span class="etiqueta bg-amarillo">[Entrega II ✧ 10 sep]</span>
+                <p class="título">Septiembre amarillo</p>
+                <p class="descripción">Mes de prevención del suicidio</p>
+                <details class="contenido-completo">
+                    <summary>Leer más</summary>
+            <p class="texto-largo">El suicidio es un problema de salud pública que afecta a millones de personas en todo el mundo. 
+                        Según la Organización Mundial de la Salud (OMS), más de 700.000 personas mueren por suicidio cada año, 
+                        lo que equivale a una persona cada 40 segundos. <br> <br> En Colombia, el suicidio es la tercera causa 
+                        de muerte entre los jóvenes de 15 a 29 años, y la segunda causa entre los hombres de 30 a 44 años. 
+                        Por eso, es importante hablar sobre este tema y promover la prevención del suicidio.</p>
+            </div>
+        </div>
+
+         <!-- TARJETA 3  -->
+         <div class="card">
+            <div class="card-imagen bg-header-rosa">
+                <img src="STRAYCITY.jpeg">
+            </div> 
+            <div class="card-contenido">
+                <span class="etiqueta bg-cian">[Entrega III ✧ 18 sep]</span>
+                <p class="título">Stray Kids en Bogotá</p>
+                <p class="descripción">No puedo respirar igual después de verlos </p>
+                <details class="contenido-completo">
+                    <summary>Leer más</summary>
+            <p class="texto-largo">Stray Kids, banda surcoreana de K-pop, cumple el deseo de 20.000 fans 
+                en Colombia con el estreno de su primer festival. <br> <br> De este modo, llega "StrayCity" a Bogotá; 
+                un concierto histórico que además fue plataforma para artistas locales como Bad Milk, quien afirmó en 
+                la red social X, sentirse honrada por la oportunidad.</p>
+                </details>
+            </div>
+        </div>
+
+         <!-- TARJETA 4  -->
+        <div class="card">
+            <div class="card-imagen bg-header-azul">
+                <img src="contacto.jpg">
+            </div> 
+            <div class="card-contenido">
+                <span class="etiqueta bg-lila">[Notas ✧ 25 sep]</span>
+                <p class="título">El disfrute de los relatos mediáticos</p>
+                <p class="descripción">Sobre lo chévere de pertenecer a algo, aunque sea a través de videos</p>
+                <details class="contenido-completo">
+                    <summary>Leer más</summary>
+            <p class="texto-largo">Omar Rincón, director del posgrado en televisión de la Universidad Javeriana, 
+                conceptualiza la Comunicación Mediática dentro de un panorama cultural en que se valoran más las 
+                narraciones y afectividades por sobre los contenidos y argumentos. <br> <br>Es decir que la comunicación 
+                produce, a través de los medios, redes de significado colectivo que produce en los individuos 
+                《una sensación individual de disfrute, de pertenecer y de compartir con los otros...》<br> <br> -Narrativas mediáticas (2006)</p>
+                </details>
+            </div>
+        </div>
+
+         <!-- TARJETA 5  -->
+        <div class="card">
+            <div class="card-imagen bg-header-amarillo">
+                <img src="biblioteca.jpeg">
+            </div> 
+            <div class="card-contenido">
+                <span class="etiqueta bg-rosa">[Entrega IV ✧ 25 sep]</span>
+                <p class="título">Visita a la biblioteca José Rafael Faría Bermúdez</p>
+                <p class="descripción">Sesión de consulta grupal durante el curso, ¡QUÉ LINDO!</p>
+                <details class="contenido-completo">
+                    <summary>Leer más</summary>
+            <p class="texto-largo">Durante la jornada tarde del 25 de septiembre del semestre 2026-2, estudiantes de 
+                Comunicación Social visitaron la biblioteca José Rafael Faría Bermúdez para realizar una sesión de 
+                consultas. Esto con el propósito de nutrir las bases teóricas sobre el periodismo y los medios dentro 
+                del curso Periodismo Electrónico.</p>
+                </details>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy;Blog Nebulosa by @nereidvalerie. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
